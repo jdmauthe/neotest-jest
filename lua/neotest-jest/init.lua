@@ -160,6 +160,8 @@ local function get_strategy_config(strategy, command)
         name = "Debug Jest Tests",
         type = "node2",
         request = "launch",
+        program = "${file}",
+        cwd = vim.fn.getcwd(),
         args = { unpack(command, 2) },
         runtimeExecutable = command[1],
         console = "integratedTerminal",
