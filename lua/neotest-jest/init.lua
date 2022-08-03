@@ -141,11 +141,13 @@ local function get_strategy_config(strategy, command)
     dap = function()
       return {
         name = "Debug Jest Tests",
-        type = "pwa-node",
+        type = "node2",
         request = "launch",
         args = { unpack(command, 2) },
         runtimeExecutable = command[1],
         console = "integratedTerminal",
+        sourceMaps = true,
+        protocol = "inspector",
         internalConsoleOptions = "neverOpen",
       }
     end,
